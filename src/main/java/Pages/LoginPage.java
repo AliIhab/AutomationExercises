@@ -22,6 +22,9 @@ public class LoginPage {
     By EmailAddressSignup = By.xpath("//body/section[@id='form']/div[1]/div[1]/div[3]/div[1]/form[1]/input[3]");
     By SignupButton = By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[3]/div[1]/form[1]/button[1]");
 
+    By Signout = By.partialLinkText("Logo");
+    By SignoutConf = By.partialLinkText("Signup / Log");
+
     public void enterEmailLogin(String a){
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOfElementLocated(EmailAddressLogin)).sendKeys(a);
@@ -47,4 +50,16 @@ public class LoginPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(SignupButton)).click();
     }
+    public void pressSignout(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(Signout)).click();
+    }
+    public void signoutConfirmation(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(SignoutConf)).isDisplayed();
+    }
+    public void signinConfirmation(){
+
+    }
+
 }

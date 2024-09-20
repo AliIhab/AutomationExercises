@@ -32,7 +32,9 @@ public class SignupPage {
     By zipcode =By.id("zipcode");
     By mobileNumber = By.id("mobile_number");
     By createAccountButton = By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/button[1]");
-
+    By Continue = By.linkText("Continue");
+    By DeleteAccount = By.partialLinkText("Delete Accou");
+    By DeleteAccConf = By.xpath("//b[contains(text(),'Account Deleted!')]");
     public void chooseGender(String a){
         boolean c = a.equals("male");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -95,5 +97,19 @@ public class SignupPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(createAccountButton)).click();
     }
+    public void pressContinue(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(Continue)).click();
+    }
+    public void pressDeleteAcc(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteAccount)).click();
+
+    }
+    public void deleteAccConfirmation(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteAccConf));
+    }
+
 
 }
