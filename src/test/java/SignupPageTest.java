@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeTest;
 import java.time.Duration;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
+
 public class SignupPageTest {
     WebDriver driver;
     LoginPage loginPageObject;
@@ -26,6 +27,7 @@ public class SignupPageTest {
     public void validSignup(){
         loginPageObject = new LoginPage(driver);
         SignupPageObject = new SignupPage(driver);
+
         loginPageObject.enterEmailSignup("Ali33@example.com");
         loginPageObject.enterUsername("Ali Ihab");
         loginPageObject.pressSignup();
@@ -42,7 +44,10 @@ public class SignupPageTest {
         SignupPageObject.enterMobileNumber("00201118675533");
         SignupPageObject.pressCreateAccount();
         SignupPageObject.pressContinue();
+
+
     }
+
 
     @Test (priority = 9)
     public void DeleteAcc(){
@@ -51,8 +56,6 @@ public class SignupPageTest {
         SignupPageObject.deleteAccConfirmation();
 
     }
-
-
 
 
     @AfterTest
