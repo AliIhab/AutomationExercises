@@ -6,12 +6,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 public class ProductsPage {
-    private WebDriver driver;
+    public WebDriver driver;
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
     }
-    By searchField = By.xpath("//input[@id='search_product']");
-    By searchButton = By.xpath("//button[@id='submit_search']");
+    By searchField = By.id("search_product");
+    By searchButton = By.id("submit_search");
     By womenCategory = By.xpath("//div[@class='left-sidebar']//a[contains(text(),'Women')]");
     By menCategory = By.xpath("//div[@class='left-sidebar']//a[contains(text(),'Men')]");
     By kidsCategory = By.xpath("//div[@class='left-sidebar']//a[contains(text(),'Kids')]");
@@ -35,19 +35,6 @@ public class ProductsPage {
     By allenSollyJuniorBrand = By.xpath("//div[@class='brands-name']//a[contains(text(),'Allen Solly Junior')]");
     By kookieKidsBrand = By.xpath("//div[@class='brands-name']//a[contains(text(),'Kookie Kids')]");
     By bibaBrand = By.xpath("//div[@class='brands-name']//a[contains(text(),'Biba')]");
-    /*
-    public void clickAddToCart(int productID){
-        By addToCart = By.xpath("(//a[@class='btn btn-default add-to-cart'])[" + productID + "]");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(addToCart)).click();
-
-    }*/
-    /*
-    public void clickViewProduct(int productID){
-        By viewProduct = By.xpath(STR."(//a[@class='btn btn-default add-to-cart']//following-sibling::a)[position()=\{productID}]");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(viewProduct)).click();
-    }*/
     public void pressWomenCategory() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(womenCategory)).click();
