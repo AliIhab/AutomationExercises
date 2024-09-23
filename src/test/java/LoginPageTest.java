@@ -3,22 +3,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
+
 import java.time.Duration;
 import Pages.LoginPage;
-import org.testng.annotations.Test;
 
 public class LoginPageTest {
-    WebDriver driver;
+    protected WebDriver driver;
     LoginPage loginPageObject;
 
 
-    @BeforeTest
+    @BeforeClass
     public void setDriver(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        //WebDriverManager.chromedriver().setup();
+        //driver = new ChromeDriver();
+        //driver.manage().window().maximize();
+        driver = SignupPageTest.getDriver();
         driver.get("https://www.automationexercise.com/login");
     }
 
@@ -62,11 +62,11 @@ public class LoginPageTest {
     }
 
 
-    @AfterTest
+   /* @AfterClass
     public void quit()  {
         if (driver != null) {
             driver.quit();
         }
-    }
+    }*/
 
 }

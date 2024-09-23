@@ -1,21 +1,29 @@
 import Pages.SignupPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 import Pages.LoginPage;
-import org.testng.annotations.Test;
 
 public class SignupPageTest {
-    WebDriver driver;
+    private static WebDriver driver;
     LoginPage loginPageObject;
     SignupPage SignupPageObject;
 
-    @BeforeTest
+    public static WebDriver getDriver(){
+        if (driver == null) {
+            System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+        }
+        return driver;
+    }
+    @BeforeSuite
+
     public void setDriver(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -57,11 +65,11 @@ public class SignupPageTest {
 
     }
 
-
-    @AfterTest
+/*
+    @AfterSuite
     public void quit()  {
         if (driver != null) {
             driver.quit();
         }
-    }
+    }*/
 }

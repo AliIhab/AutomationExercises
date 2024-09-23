@@ -1,8 +1,11 @@
 <suite name="Suite1">
-    <test name="myTest">
+    <test name="AutomationExercises" preserve-order="true">
         <classes >
-            <class name="AutomationExerciseProject"/>
-
+            <class name="SignupPageTest"/>
+            <class name="LoginPageTest"/>
+            <class name="ProductsPageTest"/>
+            <class name="HomePageTest"/>
+            <class name="CartPageTest"/>
         </classes>
     </test>
 </suite>
