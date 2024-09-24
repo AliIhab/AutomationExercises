@@ -33,7 +33,7 @@ public class SignupPage {
     By state = By.id("state");
     By zipcode =By.id("zipcode");
     By mobileNumber = By.id("mobile_number");
-    By createAccountButton = By.xpath("/html[1]/body[1]/section[1]/div[1]/div[1]/div[1]/div[1]/form[1]/button[1]");
+    By createAccountButton = By.xpath("//button[contains(text(),'Create Account')]");
     By Continue = By.linkText("Continue");
     By DeleteAccount = By.partialLinkText("Delete Accou");
     By DeleteAccConf = By.xpath("//b[contains(text(),'Account Deleted!')]");
