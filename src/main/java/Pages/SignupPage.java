@@ -12,8 +12,10 @@ import static java.util.Objects.equals;
 
 public class SignupPage {
     private WebDriver driver;
+    WebDriverWait wait;
     public SignupPage(WebDriver driver){
         this.driver = driver;
+        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
     }
 
     By genderMale = By.id("id_gender1");
@@ -37,14 +39,12 @@ public class SignupPage {
     By DeleteAccConf = By.xpath("//b[contains(text(),'Account Deleted!')]");
     public void chooseGender(String a){
         boolean c = a.equals("male");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         if (c){
             wait.until(ExpectedConditions.visibilityOfElementLocated(genderMale)).click();
         }else{ wait.until(ExpectedConditions.visibilityOfElementLocated(genderFemale)).click();}
 
     }
     public void enterPassword(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(password)).sendKeys(a);
     }
 
@@ -57,23 +57,18 @@ public class SignupPage {
         years.selectByValue(y);
     }
     public void enterFirstName(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(firstName)).sendKeys(a);
     }
     public void enterLastName(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(lastName)).sendKeys(a);
     }
     public void enterAddress(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(address1)).sendKeys(a);
     }
     public void enterAddress2(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(address2)).sendKeys(a);
     }
     public void enterCity(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(city)).sendKeys(a);
     }
     public void enterCountry(String a){
@@ -81,33 +76,26 @@ public class SignupPage {
         Country.selectByVisibleText(a);
     }
     public void enterState(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(state)).sendKeys(a);
     }
     public void enterZipCode(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(zipcode)).sendKeys(a);
     }
     public void enterMobileNumber(String a){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(mobileNumber)).sendKeys(a);
     }
 
     public void pressCreateAccount(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(createAccountButton)).click();
     }
     public void pressContinue(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(Continue)).click();
     }
     public void pressDeleteAcc(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteAccount)).click();
 
     }
     public void deleteAccConfirmation(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(DeleteAccConf));
     }
 

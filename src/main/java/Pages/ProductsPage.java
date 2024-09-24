@@ -7,8 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 public class ProductsPage {
     public WebDriver driver;
+    WebDriverWait wait;
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
+        wait = new WebDriverWait(driver,Duration.ofSeconds(10));
     }
     By searchField = By.id("search_product");
     By searchButton = By.id("submit_search");
@@ -36,116 +38,96 @@ public class ProductsPage {
     By kookieKidsBrand = By.xpath("//div[@class='brands-name']//a[contains(text(),'Kookie Kids')]");
     By bibaBrand = By.xpath("//div[@class='brands-name']//a[contains(text(),'Biba')]");
     public void pressWomenCategory() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(womenCategory)).click();
     }
 
     // Function to press Men category
     public void pressMenCategory() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(menCategory)).click();
     }
 
     // Function to press Kids category
     public void pressKidsCategory() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(kidsCategory)).click();
     }
     public void pressWomenTops() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(womenTops)).click();
     }
 
     // Function to press Women Dresses filter
     public void pressWomenDresses() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(womenDresses)).click();
     }
 
     // Function to press Women Saree filter
     public void pressWomenSaree() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(womenSaree)).click();
     }
 
     // Function to press Men Tshirts filter
     public void pressMenTshirts() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(menTshirts)).click();
     }
 
     // Function to press Men Jeans filter
     public void pressMenJeans() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(menJeans)).click();
     }
 
     // Function to press Kids Dress filter
     public void pressKidsDress() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(kidsDress)).click();
     }
 
     // Function to press Kids Tops & Shirts filter
     public void pressKidsTopsShirts() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(kidsTopsShirts)).click();
     }
 
     // Function to press Polo brand filter
     public void pressPoloBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(poloBrand)).click();
     }
 
     // Function to press H&M brand filter
     public void pressHMBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(hmBrand)).click();
     }
 
     // Function to press Madame brand filter
     public void pressMadameBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(madameBrand)).click();
     }
 
     // Function to press Mast & Harbour brand filter
     public void pressMastHarbourBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(mastHarbourBrand)).click();
     }
 
     // Function to press Babyhug brand filter
     public void pressBabyhugBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(babyhugBrand)).click();
     }
 
     // Function to press Allen Solly Junior brand filter
     public void pressAllenSollyJuniorBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(allenSollyJuniorBrand)).click();
     }
 
     // Function to press Kookie Kids brand filter
     public void pressKookieKidsBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(kookieKidsBrand)).click();
     }
 
     // Function to press Biba brand filter
     public void pressBibaBrand() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(bibaBrand)).click();
     }
     public void pressSearchButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
     }
     public void enterSearchItem(String a)
     {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchField)).sendKeys(a);
     }
 

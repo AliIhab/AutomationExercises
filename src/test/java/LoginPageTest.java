@@ -58,7 +58,9 @@ public class LoginPageTest {
         loginPageObject.enterPasswordLogin("wrongpassword");
         loginPageObject.pressLogin();
         Assert.assertTrue(driver.findElement(WrongPass).isDisplayed());
-
+        loginPageObject.clearEmailAddressLogin();
+        loginPageObject.clearPassword();
+        ValidLogin();
     }
 
 

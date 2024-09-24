@@ -18,7 +18,7 @@ public class ProductsPageTest {
 
     @BeforeClass
     public void setDriver(){
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver();
         //driver.manage().window().maximize();
         driver = SignupPageTest.getDriver();
@@ -27,7 +27,8 @@ public class ProductsPageTest {
 
     @Test
     public void searchProduct()
-    {   productPageObject = new ProductsPage(driver);
+    {
+        productPageObject = new ProductsPage(driver);
         productPageObject.enterSearchItem("Stylish Dress");
         productPageObject.pressSearchButton();
         Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(text(),'Searched Products')]")).isDisplayed());

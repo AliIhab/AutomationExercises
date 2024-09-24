@@ -18,18 +18,18 @@ public class HomePageTest {
     @BeforeClass
     public void OpenURL ()
     {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         //driver = new ChromeDriver();
         //driver.manage().window().maximize();
         driver = SignupPageTest.getDriver();
-        driver.get("https://www.automationexercise.com/login");
+        /*driver.get("https://www.automationexercise.com/login");
         By login = By.xpath("//body[1]/header[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[10]/a[1]");
         loginPageObject = new LoginPage(driver);
         loginPageObject.enterEmailLogin("Ali3@example.com");
         loginPageObject.enterPasswordLogin("password123");
         loginPageObject.pressLogin();
         //condition for valid login
-        Assert.assertTrue(driver.findElement(login).isDisplayed());
+        Assert.assertTrue(driver.findElement(login).isDisplayed());*/
         driver.get("https://www.automationexercise.com/");
         homepageTest = new HomePage(driver);
     }

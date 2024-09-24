@@ -16,7 +16,8 @@ public class SignupPageTest {
 
     public static WebDriver getDriver(){
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+            //System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
         }
@@ -65,11 +66,11 @@ public class SignupPageTest {
 
     }
 
-/*
+
     @AfterSuite
     public void quit()  {
         if (driver != null) {
             driver.quit();
         }
-    }*/
+    }
 }
